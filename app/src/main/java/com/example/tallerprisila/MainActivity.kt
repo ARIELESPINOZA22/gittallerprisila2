@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val fecha = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
 
         val proforma = Proforma(
-            cliente = "Juan Pérez",
+            cliente = "ari",
             telefono = "71234567",
             fecha = fecha,
             items = items,
