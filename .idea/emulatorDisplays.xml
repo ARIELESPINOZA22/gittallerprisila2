@@ -19,24 +19,24 @@
                   </DisplayDescriptor>
                 </list>
               </option>
-              <option name="emulatorPanelState">
-                <EmulatorPanelState>
+              <option name="panelState">
+                <PanelState>
                   <option name="splitPanel">
                     <SplitPanelState>
-                      <option name="proportion" value="0.6267496347427368" />
+                      <option name="proportion" value="0.879879891872406" />
                       <option name="firstComponent">
-                        <EmulatorPanelState>
+                        <PanelState>
                           <option name="displayId" value="0" />
-                        </EmulatorPanelState>
+                        </PanelState>
                       </option>
                       <option name="secondComponent">
-                        <EmulatorPanelState>
+                        <PanelState>
                           <option name="displayId" value="1" />
-                        </EmulatorPanelState>
+                        </PanelState>
                       </option>
                     </SplitPanelState>
                   </option>
-                </EmulatorPanelState>
+                </PanelState>
               </option>
             </MultiDisplayState>
           </value>
