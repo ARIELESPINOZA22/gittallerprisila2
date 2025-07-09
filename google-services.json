@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653184004281",
+    "project_id": "bdtallerpriscila",
+    "storage_bucket": "bdtallerpriscila.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653184004281:android:3fd6c6d670bbc337456b68",
+        "android_client_info": {
+          "package_name": "com.example.tallerprisila"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARL99YqosSMdXeaaXjyvC4je-Hyo0zytY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
