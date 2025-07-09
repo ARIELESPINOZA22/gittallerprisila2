@@ -9,6 +9,7 @@
 
 
     <Button
+        android:textColor="@color/black"
         android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
