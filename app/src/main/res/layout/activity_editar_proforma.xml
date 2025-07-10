@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editTextCliente"
+            android:id="@+id/editCliente"
+            android:hint="Nombre del Cliente"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Cliente" />
+            android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/editTextObservaciones"
+            android:id="@+id/editObservaciones"
+            android:hint="Observaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Observaciones"
-            android:inputType="textMultiLine"
-            android:minLines="2" />
+            android:layout_marginTop="8dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btnAgregarItem"
+            android:text="Agregar ítem"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ítems:"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"/>
+            android:layout_marginTop="12dp" />
 
         <ListView
             android:id="@+id/listViewItems"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:dividerHeight="1dp" />
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
 
         <Button
             android:id="@+id/btnGuardarCambios"
+            android:text="Guardar Cambios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar Cambios"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp" />
+
     </LinearLayout>
 </ScrollView>
+
