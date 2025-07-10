@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-
-
-    <Button
-        android:textColor="@color/black"
-        android:id="@+id/btnGuardar"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar Proforma" />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/etCliente"
+            android:hint="Nombre del Cliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etTelefono"
+            android:hint="Teléfono"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etItem"
+            android:hint="Descripción del ítem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:hint="Cantidad"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etPrecio"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnAgregarItem"
+            android:text="Agregar ítem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvItems"
+            android:text="Ítems agregados:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"/>
+
+        <EditText
+            android:id="@+id/etObservaciones"
+            android:hint="Observaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:text="Guardar Proforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnVerProformas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver Proformas Guardadas"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+</ScrollView>
