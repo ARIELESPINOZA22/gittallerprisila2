@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TallerPrisila"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".EditarProformaActivity"
+            android:exported="false" />
         <activity
             android:name=".DetalleProformaActivity"
             android:exported="false" />

@@ -61,6 +61,23 @@
             android:padding="8dp" />
 
         <Button
+            android:id="@+id/btnEditarProforma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar Proforma"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Proforma"
+            android:backgroundTint="#E53935"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp"/>
+
+
+        <Button
             android:id="@+id/btnVolverMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

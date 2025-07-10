@@ -4,14 +4,19 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DetalleProformaActivity : AppCompatActivity() {
 
     private lateinit var txtDetalle: TextView
+    //declaracion de proformaId para boton editar
+    private lateinit var proformaId: String
+
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +26,9 @@ class DetalleProformaActivity : AppCompatActivity() {
         txtDetalle = findViewById(R.id.txtDetalle)
 
         val id = intent.getStringExtra("id")
+        //asignacion de valor par el intent  para proformaId boton editar
+        proformaId = intent.getStringExtra("id") ?: return
+
 
         if (id == null) {
             Toast.makeText(this, "ID no válido", Toast.LENGTH_SHORT).show()
@@ -67,6 +75,43 @@ class DetalleProformaActivity : AppCompatActivity() {
                 Log.e("DetalleProforma", "Error al leer Firestore", e)
                 finish()
             }
+
+
+        //boton eliminar
+        val btnEliminar: Button = findViewById(R.id.btnEliminar)
+        btnEliminar.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Confirmar eliminación")
+                .setMessage("¿Estás seguro de que deseas eliminar esta proforma?")
+                .setPositiveButton("Sí") { _, _ ->
+                    val id = intent.getStringExtra("id")
+                    if (id != null) {
+                        FirebaseFirestore.getInstance().collection("proformas").document(id)
+                            .delete()
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Proforma eliminada", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this, "Error al eliminar", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+                .setNegativeButton("Cancelar", null)
+                .show()
+        }
+
+
+        //boton editar
+        val btnEditar: Button = findViewById(R.id.btnEditarProforma)
+        btnEditar.setOnClickListener {
+            val intent = Intent(this, EditarProformaActivity::class.java)
+            intent.putExtra("id", proformaId)
+            startActivity(intent)
+        }
+
+
+
     }
 
     fun volverAlInicio(view: android.view.View) {
