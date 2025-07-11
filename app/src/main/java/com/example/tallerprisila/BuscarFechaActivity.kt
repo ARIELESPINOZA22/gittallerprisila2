@@ -15,6 +15,7 @@ class BuscarFechaActivity : AppCompatActivity() {
     private lateinit var btnBuscar: Button
     private lateinit var listView: ListView
     private lateinit var txtTotalProformas: TextView
+    private lateinit var txtTotalBs: TextView
 
 
     private val db = FirebaseFirestore.getInstance()
@@ -32,6 +33,7 @@ class BuscarFechaActivity : AppCompatActivity() {
         btnBuscar = findViewById(R.id.btnBuscar)
         listView = findViewById(R.id.listViewResultados)
         txtTotalProformas = findViewById(R.id.txtTotalProformas)
+        txtTotalBs = findViewById(R.id.txtTotalBs)
 
 
         btnFechaInicio.setOnClickListener { mostrarDatePicker(true) }
@@ -77,21 +79,28 @@ class BuscarFechaActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 resultados.clear()
+                var totalBs = 0.0
+
                 for (doc in documents) {
                     val cliente = doc.getString("cliente") ?: "Sin nombre"
                     val fecha = doc.getString("fecha") ?: ""
-                    resultados.add("$cliente - $fecha")
+                    val total = doc.getDouble("total") ?: 0.0
+
+                    resultados.add("$cliente - $fecha - Bs ${"%.2f".format(total)}")
+                    totalBs += total
                 }
+
                 adapter.notifyDataSetChanged()
 
-                // Mostrar el total
-                val total = resultados.size
-                txtTotalProformas.text = "Total: $total proforma(s)"
+                val totalProformas = resultados.size
+                txtTotalProformas.text = "Total de proformas: $totalProformas"
+                txtTotalBs.text = "Monto total de todas las proformas: Bs ${"%.2f".format(totalBs)}"
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Error al buscar: ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 
 }
 

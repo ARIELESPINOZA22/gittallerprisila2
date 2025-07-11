@@ -36,6 +36,16 @@
         android:textColorHint="@color/design_default_color_surface"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/txtTotalBs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monto total: Bs 0.0"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:gravity="center"/>
+
     <ListView
         android:id="@+id/listViewResultados"
         android:layout_width="match_parent"

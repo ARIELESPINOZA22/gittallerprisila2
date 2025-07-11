@@ -119,7 +119,7 @@ class DetalleProformaActivity : AppCompatActivity() {
  //   }
 
     fun returnadd (view: View) {
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this,MenuActivity::class.java))
     }
 }
 
