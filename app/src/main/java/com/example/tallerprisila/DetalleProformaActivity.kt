@@ -114,9 +114,9 @@ class DetalleProformaActivity : AppCompatActivity() {
 
     }
 
-    fun volverAlInicio(view: android.view.View) {
-        finish()
-    }
+    //fun volverAlInicio(view: android.view.View) {
+       // finish()
+ //   }
 
     fun returnadd (view: View) {
         startActivity(Intent(this,MainActivity::class.java))
